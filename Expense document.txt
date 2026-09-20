@@ -1,2 +1,34 @@
 Steps to build expense project
 
+Mysql DB Installation:
+ sudo su -   --> Root user only can install 
+ dnf insatll mysql-server -y
+ systemctl enable mysqld
+ systemctl start mysqld
+ systemctl status mysqld
+ netstat -lntp --> to check the running ports
+   for mysql port --> 3306
+ps -ef | grep mysql
+
+Once install the mysql server, to access it we need to set the UserName and Password --> UserName: root, Passwprd: ExpenseApp@1
+To set the password :  mysql_secure_installation --set-root-pass ExpenseApp@1
+we already inside mysql server, simple enter mysql to check, enter show tables --> will display all tables.
+
+Now BACKEND Server:
+ --Node JS
+sudo dnf module list nodejs  --> to check nodejs versions
+sudo dnf module disable nodejs -y
+sudo dnf module enable nodejs:20 -y
+sudo dnf module install nodejs -y
+
+To start the applications we use the System Usee not the Human users
+System users --> to run the Services. this have no login access, no passwords
+  eg: id mysql
+      cat /etc/passwd |grep mysql
+      mysql:x:27:27:MySQL Server:/var/lib/mysql:/sbin/nologin
+useradd --system --home /app --shell /sbin/nologin --comment "expense system user" expense
+id expense
+tar -xzf /tmp/backend.tar.gz
+
+
+
