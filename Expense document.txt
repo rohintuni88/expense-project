@@ -11,7 +11,7 @@ Mysql DB Installation:
 ps -ef | grep mysql
 
 Once install the mysql server, to access it we need to set the UserName and Password --> UserName: root, Passwprd: ExpenseApp@1
-To set the password :  mysql_secure_installation --set-root-pass ExpenseApp@1
+To set the password :-->   mysql_secure_installation --set-root-pass ExpenseApp@1
 we already inside mysql server, simple enter mysql to check, enter show tables --> will display all tables.
 
 Now BACKEND Server:
